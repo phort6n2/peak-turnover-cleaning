@@ -1,12 +1,12 @@
-/* Peak Turnover Cleaning — shared behavior
+/* Summit Cleaning Company — shared behavior
    ------------------------------------------------------------------
    Contact details live in ONE place below — update phone/email here
-   and in the HTML (search for "555-0100" / "hello@peakturnovercleaning").
+   and in the HTML (search for "555-0100" / "hello@summitcleaningco").
 */
 (function () {
   'use strict';
 
-  var QUOTE_EMAIL = 'hello@peakturnovercleaning.com';
+  var QUOTE_EMAIL = 'hello@summitcleaningco.com';
 
   // Current year in footer
   var yr = document.getElementById('yr');

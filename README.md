@@ -1,6 +1,6 @@
-# Peak Turnover Cleaning
+# Summit Cleaning Company
 
-Marketing website for **Peak Turnover Cleaning** — Airbnb / vacation-rental
+Marketing website for **Summit Cleaning Company** — Airbnb / vacation-rental
 turnover cleaning for the Colorado Springs / greater Pikes Peak region.
 Static multi-page site, deployed on Vercel.
 
@@ -22,8 +22,8 @@ Static multi-page site, deployed on Vercel.
 ## Placeholders to replace before / at launch
 
 - **Phone:** `(719) 555-0100` → search `719) 555-0100` and `+17195550100`
-- **Email:** `hello@peakturnovercleaning.com` (also the mailto target in `app.js`)
+- **Email:** `hello@summitcleaningco.com` (also the mailto target in `app.js`)
 - **Pricing:** rates on `/pricing` are marked *draft* — confirm real numbers.
 
 The quote forms open the visitor's email app pre-filled to
-`hello@peakturnovercleaning.com` (no backend required).
+`hello@summitcleaningco.com` (no backend required).
