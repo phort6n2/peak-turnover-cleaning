@@ -8,6 +8,10 @@
 
   var QUOTE_EMAIL = 'hello@summitcleaningco.com';
 
+  // Progressive enhancement: content is visible by default; only enable the
+  // reveal animation once JS is running.
+  document.documentElement.classList.add('js');
+
   // Footer year
   var yr = document.getElementById('yr');
   if (yr) { yr.textContent = new Date().getFullYear(); }

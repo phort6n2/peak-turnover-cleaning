@@ -300,10 +300,10 @@ footer{background:var(--pine-dd);color:#a9cec4;padding:48px 0 96px}
 .mbar .btn{flex:1;justify-content:center;padding:13px}
 @media(max-width:900px){.mbar{display:flex}body{padding-bottom:70px}}
 
-/* Scroll reveal */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
-.reveal.in{opacity:1;transform:none}
+/* Scroll reveal — only hides when JS is present (progressive enhancement) */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.06s}.reveal.d2{transition-delay:.12s}.reveal.d3{transition-delay:.18s}
 
 /* Reduced motion */
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
