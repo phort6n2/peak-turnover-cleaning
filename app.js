@@ -1,4 +1,4 @@
-/* Summit Cleaning Company — shared behavior
+/* High Alpine Cleaning — shared behavior
    ------------------------------------------------------------------
    Contact details live in ONE place: update phone/email in the HTML
    (search "555-0100") and QUOTE_EMAIL below.
@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var QUOTE_EMAIL = 'hello@summitcleaningco.com';
+  var QUOTE_EMAIL = 'hello@highalpinecleaning.com';
 
   // Progressive enhancement: content is visible by default; only enable the
   // reveal animation once JS is running.
