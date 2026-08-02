@@ -243,6 +243,7 @@ section{padding:76px 0}
 .price.f .amt{color:var(--pine)}
 .amt small{font-size:.85rem;color:var(--slate)}
 .note{font-size:.85rem;color:var(--slate)}
+.note span{display:block;margin-top:5px;font-size:.72rem;color:var(--mist)}
 .pfoot{text-align:center;margin-top:24px;font-size:.95rem;color:var(--slate)}
 .tag{display:inline-block;color:var(--mist);font-size:.8rem;font-style:italic}
 .addons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:28px auto 0}
