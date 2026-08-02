@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="/styles.css">
 <script defer src="/app.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://highalpinecleaning.com/#business","name":"High Alpine Cleaning","url":"https://highalpinecleaning.com/","image":"https://highalpinecleaning.com/og-image-v2.jpg","logo":"https://highalpinecleaning.com/icon.svg","email":"hello@highalpinecleaning.com","description":"Owner-run vacation rental turnover cleaning for Airbnb, VRBO, and short-term rental hosts across the Pikes Peak region.","priceRange":"$$","areaServed":[{"@type":"City","name":"Colorado Springs"},{"@type":"City","name":"Manitou Springs"},{"@type":"City","name":"Woodland Park"},{"@type":"City","name":"Monument"},{"@type":"City","name":"Black Forest"},{"@type":"City","name":"Falcon"},{"@type":"City","name":"Fountain"}],"contactPoint":{"@type":"ContactPoint","contactType":"quotes and customer service","email":"hello@highalpinecleaning.com","availableLanguage":"English"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Vacation rental cleaning services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation rental turnover cleaning"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Linen and laundry service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation rental restocking"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Photo-verified property reports"}}]}},{"@type":"WebSite","@id":"https://highalpinecleaning.com/#website","url":"https://highalpinecleaning.com/","name":"High Alpine Cleaning","publisher":{"@id":"https://highalpinecleaning.com/#business"}}]}
+{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://highalpinecleaning.com/#business","name":"High Alpine Cleaning","url":"https://highalpinecleaning.com/","image":"https://highalpinecleaning.com/og-image-v2.jpg","logo":"https://highalpinecleaning.com/icon.svg","email":"hello@highalpinecleaning.com","telephone":"+1-805-712-0677","description":"Owner-run vacation rental turnover cleaning for Airbnb, VRBO, and short-term rental hosts across the Pikes Peak region.","priceRange":"$$","areaServed":[{"@type":"City","name":"Colorado Springs"},{"@type":"City","name":"Manitou Springs"},{"@type":"City","name":"Woodland Park"},{"@type":"City","name":"Monument"},{"@type":"City","name":"Black Forest"},{"@type":"City","name":"Falcon"},{"@type":"City","name":"Fountain"}],"contactPoint":{"@type":"ContactPoint","contactType":"quotes and customer service","telephone":"+1-805-712-0677","email":"hello@highalpinecleaning.com","availableLanguage":"English"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Vacation rental cleaning services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation rental turnover cleaning"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Linen and laundry service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Vacation rental restocking"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Photo-verified property reports"}}]}},{"@type":"WebSite","@id":"https://highalpinecleaning.com/#website","url":"https://highalpinecleaning.com/","name":"High Alpine Cleaning","publisher":{"@id":"https://highalpinecleaning.com/#business"}}]}
 </script>
 </head>
 <body>
@@ -42,7 +42,7 @@
 <a href="/faq">FAQ</a>
 </nav>
 <div class="nav-c">
-<a class="nav-ph" href="mailto:hello@highalpinecleaning.com">✉ Email us</a>
+<a class="nav-ph track-phone" href="tel:+18057120677">☎ (805) 712-0677</a>
 <a class="btn p sm" href="/contact">Get a free quote</a>
 <button class="nav-tog" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></button>
 </div>
@@ -53,7 +53,7 @@
 <a href="/areas">Areas</a>
 <a href="/story">Our story</a>
 <a href="/faq">FAQ</a>
-<div class="row"><a class="btn d" href="mailto:hello@highalpinecleaning.com">Email</a><a class="btn p" href="/contact">Get a quote</a></div>
+<div class="row"><a class="btn d track-phone" href="tel:+18057120677">Call</a><a class="btn p" href="/contact">Get a quote</a></div>
 </nav>
 </header>
 
@@ -73,16 +73,19 @@
 </div>
 <div class="qc">
 <h2 class="form-title">Check your property</h2><p class="sm">Share the basics. Most hosts hear back the same day.</p>
-<form data-quote action="mailto:hello@highalpinecleaning.com" method="post" enctype="text/plain">
-<div class="g2"><div class="fld"><label for="h-name">Name</label><input id="h-name" required name="name" autocomplete="name" placeholder="Your name"></div><div class="fld"><label for="h-phone">Phone</label><input id="h-phone" required name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(719) 000-0000"></div></div>
-<div class="fld"><label for="h-email">Email <span style="color:var(--mist);font-weight:400">(optional)</span></label><input id="h-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
+<form data-quote action="/api/quote" method="post">
+<div class="hp" aria-hidden="true"><label for="h-company">Company website</label><input id="h-company" name="company" tabindex="-1" autocomplete="off"></div>
+<div class="g2"><div class="fld"><label for="h-name">Name</label><input id="h-name" required name="name" autocomplete="name" placeholder="Your name"></div><div class="fld"><label for="h-phone">Phone <span class="optional">(optional)</span></label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number"></div></div>
+<div class="fld"><label for="h-email">Email</label><input id="h-email" required name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
 <div class="fld"><label for="h-city">Property city or address</label><input id="h-city" required name="address" autocomplete="address-level2" placeholder="e.g. Manitou Springs, CO"></div>
 <div class="g2"><div class="fld"><label for="h-bed">Bedrooms</label><select id="h-bed" name="bedrooms" required><option value="" disabled selected>Select…</option><option>Studio / 1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div><div class="fld"><label for="h-turn">Turnovers / month</label><select id="h-turn" name="turnovers" required><option value="" disabled selected>Select…</option><option>Just getting started</option><option>1–4</option><option>5–10</option><option>10+</option><option>Multiple properties</option></select></div></div>
+<label class="consent" for="h-sms"><input id="h-sms" name="sms_consent" value="yes" type="checkbox"><span>I agree to receive recurring conversational text messages from High Alpine Cleaning about my quote, scheduling, service updates, and customer support at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</span></label>
 <button class="btn p" type="submit">Check availability &amp; pricing →</button>
-<p class="fnote">Takes 30 seconds · opens your email pre-filled · no obligation.</p>
+<p class="fnote">Takes about 30 seconds. Text consent is optional and unchecked.</p>
 </form>
-<div class="form-ok" tabindex="-1" aria-live="polite"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Your request is ready to send</h3><p>We reply the same day for most hosts. If your email app didn’t open, use the copy option below.</p></div>
-<div class="form-fallback"><b>Didn’t your email app open?</b> Copy the details below and email them to hello@highalpinecleaning.com.<textarea readonly aria-label="Quote request details"></textarea><button type="button" class="btn d sm" data-copy>Copy details</button></div>
+<div class="form-ok" tabindex="-1" aria-live="polite"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Thanks—we received your request.</h3><p>We reply the same day for most hosts, Monday through Saturday.</p></div>
+<div class="form-error" tabindex="-1" role="alert"><b>We couldn’t send that request.</b> <span data-error-message>Please try again or contact us directly.</span></div>
+<div class="form-fallback"><b>Prefer email?</b> Copy the details below and send them to <a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a>.<textarea readonly aria-label="Quote request details"></textarea><button type="button" class="btn d sm" data-copy>Copy details</button></div>
 </div>
 </div>
 <svg class="mtn" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true"><path fill="#fff" fill-opacity=".07" d="M0 240 L210 120 400 172 560 96 760 168 980 108 1180 158 1440 100 1440 240Z"/><path fill="#fff" fill-opacity=".16" d="M0 240 L250 104 380 158 560 40 720 168 900 92 1110 170 1300 116 1440 150 1440 240Z"/></svg>
@@ -172,13 +175,13 @@
 <footer><div class="wrap">
 <div class="foot">
 <div><a href="/" class="logo"><svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0e5245"/><path d="M6 22L13 10l4 6 3-4 6 10z" fill="#fff"/></svg> High Alpine <span>Cleaning</span></a><p style="margin-top:14px;max-width:34ch;font-size:.92rem">Airbnb &amp; vacation rental turnover cleaning across the Pikes Peak region. Built by owners, for owners.</p></div>
-<div><div class="foot-h">Explore</div><nav class="foot-l" aria-label="Footer"><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/areas">Service areas</a><a href="/story">Our story</a><a href="/faq">FAQ</a><a href="/contact">Contact</a></nav></div>
-<div><div class="foot-h">Get in touch</div><div class="foot-l"><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a><span>Serving the Pikes Peak region</span></div></div>
+<div><div class="foot-h">Explore</div><nav class="foot-l" aria-label="Footer"><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/areas">Service areas</a><a href="/story">Our story</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav></div>
+<div><div class="foot-h">Get in touch</div><div class="foot-l"><a class="track-phone" href="tel:+18057120677">(805) 712-0677</a><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a><span>Serving the Pikes Peak region</span></div></div>
 </div>
 <div class="legal"><span>© <span id="yr"></span> High Alpine Cleaning · Colorado Springs, CO</span><span>Insured &amp; bonded · Serving the Pikes Peak region</span></div>
 </div></footer>
 
-<div class="mbar"><a class="btn d" href="mailto:hello@highalpinecleaning.com">✉️ Email</a><a class="btn p" href="/contact">Get a free quote</a></div>
+<div class="mbar"><a class="btn d track-phone" href="tel:+18057120677">☎ Call</a><a class="btn p" href="/contact">Get a free quote</a></div>
 
 </body>
 </html>

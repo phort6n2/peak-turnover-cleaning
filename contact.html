@@ -29,7 +29,7 @@
 <a href="/faq">FAQ</a>
 </nav>
 <div class="nav-c">
-<a class="nav-ph" href="mailto:hello@highalpinecleaning.com">✉ Email us</a>
+<a class="nav-ph track-phone" href="tel:+18057120677">☎ (805) 712-0677</a>
 <a class="btn p sm" href="/contact">Get a free quote</a>
 <button class="nav-tog" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></button>
 </div>
@@ -40,7 +40,7 @@
 <a href="/areas">Areas</a>
 <a href="/story">Our story</a>
 <a href="/faq">FAQ</a>
-<div class="row"><a class="btn d" href="mailto:hello@highalpinecleaning.com">Email</a><a class="btn p" href="/contact">Get a quote</a></div>
+<div class="row"><a class="btn d track-phone" href="tel:+18057120677">Call</a><a class="btn p" href="/contact">Get a quote</a></div>
 </nav>
 </header>
 
@@ -51,6 +51,7 @@
 <span class="eye" style="color:#8fd0e6">Get started</span><h1>Get your free turnover quote.</h1>
 <p class="sub">Tell us about your rental and we’ll get back to you the same day with clear pricing and availability. No pressure, no spam.</p>
 <div class="cm">
+<div><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg><span class="cl">Call<br><a class="track-phone" href="tel:+18057120677">(805) 712-0677</a></span></div>
 <div><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="cl">Email<br><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a></span></div>
 <div><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span class="cl">Serving<br><b style="color:#fff">the greater Pikes Peak region</b></span></div>
 <div><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="cl">Response time<br><b style="color:#fff">Same day for most hosts (Mon–Sat)</b></span></div>
@@ -58,17 +59,20 @@
 </div>
 <div class="fc" id="quote">
 <h2 class="form-title">Request your quote</h2><p class="sm" style="color:var(--slate);font-size:.9rem;margin-bottom:4px">Same-day response for most hosts.</p>
-<form data-quote action="mailto:hello@highalpinecleaning.com" method="post" enctype="text/plain">
-<div class="g2"><div class="fld"><label for="c-name">Name</label><input id="c-name" required name="name" autocomplete="name" placeholder="Your name"></div><div class="fld"><label for="c-phone">Phone</label><input id="c-phone" required name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(719) 000-0000"></div></div>
+<form data-quote action="/api/quote" method="post">
+<div class="hp" aria-hidden="true"><label for="c-company">Company website</label><input id="c-company" name="company" tabindex="-1" autocomplete="off"></div>
+<div class="g2"><div class="fld"><label for="c-name">Name</label><input id="c-name" required name="name" autocomplete="name" placeholder="Your name"></div><div class="fld"><label for="c-phone">Phone <span class="optional">(optional)</span></label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number"></div></div>
 <div class="fld"><label for="c-email">Email</label><input id="c-email" required name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
 <div class="fld"><label for="c-addr">Property address or city</label><input id="c-addr" required name="address" autocomplete="street-address" placeholder="e.g. 123 Pikes Peak Ave, Colorado Springs"></div>
 <div class="g2"><div class="fld"><label for="c-bed">Bedrooms</label><select id="c-bed" name="bedrooms" required><option value="" disabled selected>Select…</option><option>Studio / 1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div><div class="fld"><label for="c-turn">Turnovers / month</label><select id="c-turn" name="turnovers" required><option value="" disabled selected>Select…</option><option>Just getting started</option><option>1–4</option><option>5–10</option><option>10+</option><option>Multiple properties</option></select></div></div>
 <div class="fld"><label for="c-notes">Notes (optional)</label><textarea id="c-notes" name="notes" rows="4" placeholder="Same-day turns, linens, hot tub, PCS move, Furnished Finder, etc."></textarea></div>
+<label class="consent" for="c-sms"><input id="c-sms" name="sms_consent" value="yes" type="checkbox"><span>I agree to receive recurring conversational text messages from High Alpine Cleaning about my quote, scheduling, service updates, and customer support at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</span></label>
 <button class="btn p" type="submit">Get my free quote →</button>
-<p class="fnote">Submitting opens your email app with the details pre-filled to hello@highalpinecleaning.com. No spam, ever.</p>
+<p class="fnote">Your request is sent securely. Text consent is optional and unchecked.</p>
 </form>
-<div class="form-ok" tabindex="-1" aria-live="polite"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Your request is ready to send</h3><p>We reply the same day for most hosts. If your email app didn’t open, use the copy option below.</p></div>
-<div class="form-fallback"><b>Didn’t your email app open?</b> Copy the details below and email them to hello@highalpinecleaning.com.<textarea readonly aria-label="Quote request details"></textarea><button type="button" class="btn d sm" data-copy>Copy details</button></div>
+<div class="form-ok" tabindex="-1" aria-live="polite"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3>Thanks—we received your request.</h3><p>We reply the same day for most hosts, Monday through Saturday.</p></div>
+<div class="form-error" tabindex="-1" role="alert"><b>We couldn’t send that request.</b> <span data-error-message>Please try again or contact us directly.</span></div>
+<div class="form-fallback"><b>Prefer email?</b> Copy the details below and send them to <a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a>.<textarea readonly aria-label="Quote request details"></textarea><button type="button" class="btn d sm" data-copy>Copy details</button></div>
 </div>
 </div></section>
 
@@ -77,13 +81,13 @@
 <footer><div class="wrap">
 <div class="foot">
 <div><a href="/" class="logo"><svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0e5245"/><path d="M6 22L13 10l4 6 3-4 6 10z" fill="#fff"/></svg> High Alpine <span>Cleaning</span></a><p style="margin-top:14px;max-width:34ch;font-size:.92rem">Airbnb &amp; vacation rental turnover cleaning across the Pikes Peak region. Built by owners, for owners.</p></div>
-<div><div class="foot-h">Explore</div><nav class="foot-l" aria-label="Footer"><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/areas">Service areas</a><a href="/story">Our story</a><a href="/faq">FAQ</a><a href="/contact">Contact</a></nav></div>
-<div><div class="foot-h">Get in touch</div><div class="foot-l"><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a><span>Serving the Pikes Peak region</span></div></div>
+<div><div class="foot-h">Explore</div><nav class="foot-l" aria-label="Footer"><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/areas">Service areas</a><a href="/story">Our story</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav></div>
+<div><div class="foot-h">Get in touch</div><div class="foot-l"><a class="track-phone" href="tel:+18057120677">(805) 712-0677</a><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a><span>Serving the Pikes Peak region</span></div></div>
 </div>
 <div class="legal"><span>© <span id="yr"></span> High Alpine Cleaning · Colorado Springs, CO</span><span>Insured &amp; bonded · Serving the Pikes Peak region</span></div>
 </div></footer>
 
-<div class="mbar"><a class="btn d" href="mailto:hello@highalpinecleaning.com">✉️ Email</a><a class="btn p" href="#quote">Start quote</a></div>
+<div class="mbar"><a class="btn d track-phone" href="tel:+18057120677">☎ Call</a><a class="btn p" href="#quote">Start quote</a></div>
 
 </body>
 </html>

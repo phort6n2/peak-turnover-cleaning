@@ -16,12 +16,14 @@ Static multi-page site, deployed on Vercel.
 | `faq.html` | FAQ (`/faq`) |
 | `contact.html` | Contact (`/contact`) |
 | `styles.css` | Shared styles |
-| `app.js` | Shared behavior (footer year, mailto quote form) |
+| `app.js` | Shared behavior and direct quote-form submission |
+| `api/quote.js` | Validated server-side handoff to a HighLevel workflow |
 | `img/` | Optimized original site photography |
 | `vercel.json` | `cleanUrls` + no trailing slash |
 | `robots.txt` / `sitemap.xml` | Search crawler discovery |
 | `og-image-v2.jpg` | Social sharing preview |
 | `site.webmanifest` / `icon.svg` | Installable-site metadata and icon |
+| `privacy.html` / `terms.html` | Public privacy, website, and SMS terms |
 | `404.html` | Branded not-found page |
 
 ## Search and social metadata
@@ -32,17 +34,32 @@ page includes FAQPage structured data. If the production domain changes,
 replace `https://highalpinecleaning.com` across the HTML files,
 `robots.txt`, and `sitemap.xml` before launch.
 
+## HighLevel lead workflow
+
+Create a HighLevel workflow with an **Inbound Webhook** trigger, then add its URL
+to Vercel as `HIGHLEVEL_WEBHOOK_URL` for Production, Preview, and Development.
+Redeploy after adding the variable. See `.env.example` for the expected value.
+
+Map the incoming fields to the contact and opportunity record. Important fields
+include `first_name`, `email`, `phone`, `property_address_or_city`,
+`bedrooms`, `turnovers_per_month`, `notes`, `page_url`, the UTM fields, and the
+three `sms_consent*` fields.
+
+The form always creates the lead, but an SMS workflow must branch on
+`sms_consent = true` before sending any text. Preserve the consent text and
+timestamp on the contact or opportunity record as proof of opt-in.
+
 ## Production checklist
 
-- **Email:** confirm `hello@highalpinecleaning.com` receives mail (also the mailto target in `app.js`)
-- **Pricing:** confirm the published starting rates on `/pricing`.
+- Confirm `hello@highalpinecleaning.com` receives mail.
+- Confirm the published starting rates on `/pricing`.
+- Set and test `HIGHLEVEL_WEBHOOK_URL` in Vercel.
+- Confirm a form submission creates or updates the expected HighLevel contact.
+- Confirm the SMS branch runs only when the optional checkbox is checked.
+- Add the HighLevel number-pool tracking script when available. All fallback
+  number links use `(805) 712-0677` and the `track-phone` class for replacement.
+- Make sure the legal business name, address, website, use case, and sample
+  messages in the A2P registration match the real business and deployed pages.
 
-Do not launch paid traffic until the email inbox and pricing are verified.
-The site intentionally omits a public phone number until a dedicated business
-line is available; add it consistently across the HTML and structured data.
-
-The quote forms open the visitor's email app pre-filled to
-`hello@highalpinecleaning.com` (no backend required). If no email application
-opens, the completed request remains visible for one-click copy/paste. For a
-future direct-submit flow, connect an email provider or lead store before
-changing the form behavior.
+Do not launch paid traffic or SMS automation until the inbox, pricing, form
+workflow, STOP/HELP handling, and consent branch have been verified end to end.
