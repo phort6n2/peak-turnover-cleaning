@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/(og-image-v2.jpg|img/lubbes-family.webp)",
+      "source": "/(og-image-v2.jpg|img/lubbes-family.webp|img/lubbes-family-720.webp|img/lubbes-family-1200.webp)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

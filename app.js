@@ -3,6 +3,13 @@
   'use strict';
 
   var QUOTE_EMAIL = 'hello@highalpinecleaning.com';
+  var dataLayer = window.dataLayer = window.dataLayer || [];
+
+  function track(eventName, details) {
+    var eventData = Object.assign({ event: eventName, page_path: window.location.pathname }, details || {});
+    dataLayer.push(eventData);
+    document.dispatchEvent(new CustomEvent('highalpine:track', { detail: eventData }));
+  }
 
   // Progressive enhancement: content is visible by default; only enable the
   // reveal animation once JS is running.
@@ -28,6 +35,7 @@
   if (tog && mnav) {
     var setMenu = function (open) {
       mnav.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
       tog.setAttribute('aria-expanded', open ? 'true' : 'false');
       tog.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     };
@@ -112,10 +120,13 @@
     var formData = new FormData(form);
     var data = Object.fromEntries(formData.entries());
     data.sms_consent = formData.get('sms_consent') === 'yes';
+    data.consent_source = data.sms_consent ? 'website_checkbox' : '';
+    data.form_started_at = form.dataset.startedAt || '';
+    data.source_context = form.dataset.sourceContext || window.location.pathname;
     data.page_url = window.location.href;
     data.referrer = document.referrer;
     var search = new URLSearchParams(window.location.search);
-    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'msclkid'].forEach(function (key) {
       data[key] = search.get(key) || '';
     });
     var body = composeMessage(data);
@@ -143,7 +154,9 @@
         ok.style.display = 'block';
         if (ok.hasAttribute('tabindex')) { ok.focus(); }
       }
+      track('quote_form_success', { form_id: form.id || 'quote-form', source_context: data.source_context });
     } catch (err) {
+      track('quote_form_error', { form_id: form.id || 'quote-form', source_context: data.source_context });
       showFormError(
         card,
         err.message || 'We could not send your request right now.',
@@ -156,7 +169,30 @@
   }
 
   var forms = document.querySelectorAll('form[data-quote]');
+  var query = new URLSearchParams(window.location.search);
+  var referredArea = '';
+  try {
+    var referredPath = new URL(document.referrer).pathname;
+    var areaByPath = {
+      '/areas/colorado-springs': 'Colorado Springs, CO',
+      '/areas/manitou-springs': 'Manitou Springs, CO',
+      '/areas/woodland-park': 'Woodland Park, CO',
+      '/areas/monument': 'Monument, CO'
+    };
+    referredArea = areaByPath[referredPath] || '';
+  } catch (ignore) {}
   forms.forEach(function (f) {
+    f.dataset.startedAt = String(Date.now());
+    f.dataset.sourceContext = query.get('source') || document.referrer || window.location.pathname;
+    var address = f.querySelector('[name="address"]');
+    var requestedArea = query.get('area') || referredArea;
+    if (address && requestedArea && !address.value) { address.value = requestedArea; }
+    var started = false;
+    f.addEventListener('focusin', function () {
+      if (started) { return; }
+      started = true;
+      track('quote_form_start', { form_id: f.id || 'quote-form', source_context: f.dataset.sourceContext });
+    });
     var sms = f.querySelector('[name="sms_consent"]');
     var phone = f.querySelector('[name="phone"]');
     if (sms && phone) {
@@ -169,6 +205,18 @@
       syncPhoneRequirement();
     }
     f.addEventListener('submit', handleQuote);
+  });
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a');
+    if (!link) { return; }
+    if (link.classList.contains('track-phone')) {
+      track('phone_click', { link_text: link.textContent.trim(), destination: link.getAttribute('href') });
+    } else if (link.classList.contains('btn')) {
+      track('cta_click', { link_text: link.textContent.trim(), destination: link.getAttribute('href') });
+    } else if (link.origin && link.origin !== window.location.origin) {
+      track('outbound_click', { link_text: link.textContent.trim(), destination: link.href });
+    }
   });
 
   // Copy button in the fallback block

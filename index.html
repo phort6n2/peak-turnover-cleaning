@@ -66,18 +66,18 @@
 <p class="sub">Airbnb and vacation rental cleaning across Colorado Springs and the Pikes Peak region — with linens, restocking, damage checks, and photo proof after every turn.</p>
 <div class="ctas"><a class="btn p" href="/contact">Check availability &amp; pricing</a><a class="btn g" href="/pricing">See starting rates</a></div>
 <div class="chips">
-<span class="chip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Insured &amp; bonded</span>
+<span class="chip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Owner-run &amp; property-specific</span>
 <span class="chip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg> Photo-verified reports</span>
 <span class="chip"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg> Local Colorado owners</span>
 </div>
 </div>
 <div class="qc">
-<h2 class="form-title">Check your property</h2><p class="sm">Share the basics. Most hosts hear back the same day.</p>
-<form data-quote action="/api/quote" method="post">
-<div class="hp" aria-hidden="true"><label for="h-company">Company website</label><input id="h-company" name="company" tabindex="-1" autocomplete="off"></div>
+<h2 class="form-title">Check your property</h2><p class="sm">Share the basics. Most hosts hear back the same day, Monday through Saturday.</p>
+<form id="home-quote" data-quote action="/api/quote" method="post">
+<div class="hp" aria-hidden="true" inert><label for="h-company">Company website</label><input id="h-company" name="company" tabindex="-1" autocomplete="off"></div>
 <div class="g2"><div class="fld"><label for="h-name">Name</label><input id="h-name" required name="name" autocomplete="name" placeholder="Your name"></div><div class="fld"><label for="h-phone">Phone <span class="optional">(optional)</span></label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Your mobile number"></div></div>
 <div class="fld"><label for="h-email">Email</label><input id="h-email" required name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com"></div>
-<div class="fld"><label for="h-city">Property city or address</label><input id="h-city" required name="address" autocomplete="address-level2" placeholder="e.g. Manitou Springs, CO"></div>
+<div class="fld"><label for="h-city">Property city or ZIP</label><input id="h-city" required name="address" autocomplete="address-level2" placeholder="e.g. Manitou Springs, CO"></div>
 <div class="g2"><div class="fld"><label for="h-bed">Bedrooms</label><select id="h-bed" name="bedrooms" required><option value="" disabled selected>Select…</option><option>Studio / 1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div><div class="fld"><label for="h-turn">Turnovers / month</label><select id="h-turn" name="turnovers" required><option value="" disabled selected>Select…</option><option>Just getting started</option><option>1–4</option><option>5–10</option><option>10+</option><option>Multiple properties</option></select></div></div>
 <label class="consent" for="h-sms"><input id="h-sms" name="sms_consent" value="yes" type="checkbox"><span>I agree to receive recurring conversational text messages from High Alpine Cleaning about my quote, scheduling, service updates, and customer support at the number provided. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. Consent is not a condition of purchase. See our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</span></label>
 <button class="btn p" type="submit">Check availability &amp; pricing →</button>
@@ -92,19 +92,20 @@
 </section>
 
 <div class="trust"><div class="wrap">
-<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Same-day &amp; back-to-back turnovers</span>
-<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Fresh linens &amp; laundry handled</span>
-<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Consumables restocked</span>
+<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Scheduling built around guest changeovers</span>
+<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Beds reset; laundry options available</span>
+<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Owner-supplied essentials restocked</span>
 <span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Damage &amp; issue reporting</span>
-<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Re-clean guarantee</span>
+<span><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Property-specific checklist</span>
 </div></div>
 
 <section class="photo-showcase"><div class="wrap">
 <div class="sh"><span class="eye">The guest-ready standard</span><h2>Clean is only the beginning.</h2><p>Every reset is finished with the details that protect your listing, simplify check-in, and make a five-star first impression.</p></div>
 <div class="photo-g">
-<figure class="photo-card reveal"><img src="/img/linen-report.jpg" srcset="/img/linen-report-mobile.jpg 720w, /img/linen-report.jpg 1448w" sizes="(max-width:640px) calc(100vw - 40px), 528px" width="1448" height="1086" loading="lazy" decoding="async" alt="Freshly made mountain-rental bed with folded towels and a photo-report tray"><figcaption class="photo-cap"><span class="eye">Fresh &amp; verified</span><h3>Guest-ready, down to the last detail.</h3><p>Fresh linens, careful staging, and a completed photo report after every turnover.</p></figcaption></figure>
+<figure class="photo-card reveal"><img src="/img/linen-report.jpg" srcset="/img/linen-report-mobile.jpg 720w, /img/linen-report.jpg 1448w" sizes="(max-width:640px) calc(100vw - 40px), 528px" width="1448" height="1086" loading="lazy" decoding="async" alt="Freshly made mountain-rental bed with folded towels"><figcaption class="photo-cap"><span class="eye">Guest-ready standard</span><h3>Ready, down to the last detail.</h3><p>Fresh linens, careful staging, and guest-facing details reset to your property plan.</p></figcaption></figure>
 <figure class="photo-card reveal d1"><img src="/img/restocked-kitchen.jpg" srcset="/img/restocked-kitchen-mobile.jpg 720w, /img/restocked-kitchen.jpg 1448w" sizes="(max-width:640px) calc(100vw - 40px), 528px" width="1448" height="1086" loading="lazy" decoding="async" alt="Spotless vacation-rental kitchen with an organized coffee station and fresh towels"><figcaption class="photo-cap"><span class="eye">Restocked &amp; ready</span><h3>No surprises at check-in.</h3><p>Guest essentials are checked and replenished so the next stay starts smoothly.</p></figcaption></figure>
 </div>
+<p class="illustrative-note">Service-standard imagery. Your actual completion report contains photos and checklist results from your property.</p>
 </div></section>
 
 <section class="textured"><div class="wrap story-g">
@@ -116,7 +117,7 @@
 <a class="btn d" href="/story">Read our story →</a>
 </div>
 <div class="owner-media reveal">
-<img src="/img/lubbes-family.webp" width="4032" height="3024" loading="lazy" decoding="async" alt="The Lubbes family, owners of High Alpine Cleaning and Country Cabin">
+<img src="/img/lubbes-family-1200.webp" srcset="/img/lubbes-family-720.webp 720w, /img/lubbes-family-1200.webp 1200w, /img/lubbes-family.webp 4032w" sizes="(max-width:860px) calc(100vw - 40px), 516px" width="1200" height="900" loading="lazy" decoding="async" alt="The Lubbes family, owners of High Alpine Cleaning and Country Cabin">
 <div class="owner-tag"><b>The Lubbes family</b><span>Colorado hosts · High Alpine Cleaning owners</span></div>
 </div>
 </div></section>
@@ -130,27 +131,27 @@
 <section><div class="wrap">
 <div class="sh"><span class="eye">What we do</span><h2>Everything your turnover needs — in one crew.</h2><p>A complete guest-ready reset, not just a wipe-down. Every service is built around back-to-back booking timelines.</p></div>
 <div class="cards">
-<div class="card reveal"><div class="ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div><h3>Full turnover cleaning</h3><p>Top-to-bottom guest-ready reset between every stay — kitchens, baths, floors, high-touch surfaces, and staging to hotel standard.</p></div>
-<div class="card reveal d1"><div class="ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></div><h3>Linens &amp; laundry</h3><p>Fresh, hotel-grade linens and towels every turn. We wash, dry, fold, and make beds — and can keep par-stock linen sets for effortless same-day turns.</p></div>
+<div class="card reveal"><div class="ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div><h3>Full turnover cleaning</h3><p>Top-to-bottom guest-ready reset between stays—kitchens, baths, floors, high-touch surfaces, and staging to your property standard.</p></div>
+<div class="card reveal d1"><div class="ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></div><h3>Linens &amp; laundry</h3><p>We remake beds using clean linens supplied at the property. Optional laundering or par-stock swaps can be added when available.</p></div>
 <div class="card reveal d2"><div class="ic"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg></div><h3>Photo-verified reports</h3><p>After every turn you get a completed checklist plus photos of the guest-ready home — proof it’s done right, and documentation for any claim.</p></div>
 </div>
 <div class="section-cta"><a class="btn d" href="/services">See all services →</a></div>
 </div></section>
 
 <section class="steps pine-grad dark-band"><div class="wrap">
-<div class="sh"><span class="eye" style="color:#8fd0e6">How it works</span><h2>Simple to start. Hands-off once you’re on the calendar.</h2></div>
+<div class="sh"><span class="eye" style="color:#8fd0e6">How it works</span><h2>Simple to start. Clear from one turn to the next.</h2></div>
 <div class="steps-g">
 <div class="step reveal"><div class="num">1</div><h3>Tell us about your place</h3><p>Share your property, bed/bath count, and turnover schedule. We send a clear, transparent quote.</p></div>
 <div class="step reveal d1"><div class="num">2</div><h3>We build your checklist</h3><p>A property-specific turnover checklist so every clean is consistent — staging, supplies, and all.</p></div>
-<div class="step reveal d2"><div class="num">3</div><h3>Sync your calendar</h3><p>Connect your Airbnb/VRBO calendar (or Turno) and turnovers schedule automatically at checkout.</p></div>
-<div class="step reveal d3"><div class="num">4</div><h3>Relax — it’s handled</h3><p>We clean, restock, and send photo proof after every turn. You just watch the five-star reviews roll in.</p></div>
+<div class="step reveal d2"><div class="num">3</div><h3>Confirm scheduling</h3><p>We document your booking workflow and confirm the calendar or scheduling method during onboarding.</p></div>
+<div class="step reveal d3"><div class="num">4</div><h3>Relax — it’s handled</h3><p>We clean, reset agreed supplies, and send a completion report so you know the property is ready.</p></div>
 </div>
 </div></section>
 
 <section class="soft-bg"><div class="wrap">
 <div class="guarantee reveal">
 <div class="gi"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
-<div><h3>The Re-Clean Promise</h3><p>If a guest-ready photo ever misses the mark, send us a photo within 24 hours and we’ll come back and fix it — free — before your next check-in. Fully insured and bonded, every turn.</p></div>
+<div><h3>The Re-Clean Promise</h3><p>If a completed turnover does not match the agreed checklist, contact us promptly. We’ll prioritize a correction around property access and the next guest’s arrival; exact terms are confirmed before service begins.</p></div>
 </div>
 </div></section>
 
@@ -158,7 +159,7 @@
 <div class="found light reveal">
 <span class="pill"><svg class="lc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Founding hosts · 10 spots</span>
 <h3>Founding Host Offer</h3>
-<p>We’re a brand-new Colorado business, so instead of borrowed testimonials we’re making an honest offer to our first hosts. Be one of our first 10 properties and lock in <b>10% off your first three turnovers</b> — plus a complimentary first deep clean to set your listing up right. We’ll over-deliver to earn your review.</p>
+<p>We’re a brand-new Colorado business, so instead of borrowed testimonials we’re making an honest offer to our first hosts. Be one of our first 10 properties and receive <b>10% off your first three standard turnovers</b>—plus a complimentary onboarding deep clean within the agreed scope.</p><small class="offer-terms">Available to new recurring-service customers while launch spots remain. One offer per property; scheduling, property condition, and final deep-clean scope are confirmed during onboarding. Not combinable with other offers.</small>
 <a class="btn p" href="/contact">Claim a founding spot →</a>
 </div>
 </div></section>
@@ -166,7 +167,7 @@
 <section class="cta pine-grad dark-band"><div class="wrap">
 <span class="eye" style="color:#8fd0e6">Get started</span>
 <h2>Ready to hand off turnover day?</h2>
-<p>Tell us about your rental and we’ll get back to you the same day with clear pricing and availability. No pressure, no spam.</p>
+<p>Tell us about your rental and we’ll get back to you the same day for most hosts, Monday through Saturday. No pressure, no spam.</p>
 <div class="ctas" style="justify-content:center"><a class="btn p" href="/contact">Get a free quote</a><a class="btn g" href="mailto:hello@highalpinecleaning.com">✉️ Email us</a></div>
 </div></section>
 
@@ -178,7 +179,7 @@
 <div><div class="foot-h">Explore</div><nav class="foot-l" aria-label="Footer"><a href="/services">Services</a><a href="/pricing">Pricing</a><a href="/areas">Service areas</a><a href="/story">Our story</a><a href="/faq">FAQ</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav></div>
 <div><div class="foot-h">Get in touch</div><div class="foot-l"><a class="track-phone" href="tel:+17193773123">(719) 377-3123</a><a href="mailto:hello@highalpinecleaning.com">hello@highalpinecleaning.com</a><span>Serving the Pikes Peak region</span></div></div>
 </div>
-<div class="legal"><span>© <span id="yr"></span> High Alpine Cleaning · Colorado Springs, CO</span><span>Insured &amp; bonded · Serving the Pikes Peak region</span></div>
+<div class="legal"><span>© <span id="yr"></span> High Alpine Cleaning · Colorado Springs, CO</span><span>Owner-run · Serving the Pikes Peak region</span></div>
 </div></footer>
 
 <div class="mbar"><a class="btn d track-phone" href="tel:+17193773123">☎ Call</a><a class="btn p" href="/contact">Get a free quote</a></div>
