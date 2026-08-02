@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e5245"/><stop offset="1" stop-color="#072a23"/></linearGradient>
+    <pattern id="topo" width="150" height="120" patternUnits="userSpaceOnUse"><path d="M0 25Q38 5 75 25t75 0M0 62q38-20 75 0t75 0M0 99q38-20 75 0t75 0" fill="none" stroke="#fff" stroke-opacity=".055" stroke-width="2"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#topo)"/>
+  <rect x="76" y="64" width="62" height="62" rx="14" fill="#fff"/>
+  <path d="M87 111 105 78l11 17 7-11 12 27H87Z" fill="#0e5245"/>
+  <text x="158" y="104" fill="#fff" font-family="Georgia,serif" font-size="34" font-weight="700">High Alpine</text>
+  <text x="405" y="104" fill="#8fd0e6" font-family="Georgia,serif" font-size="34" font-weight="700">Cleaning</text>
+  <rect x="76" y="172" width="262" height="44" rx="22" fill="#d29a3a" fill-opacity=".15" stroke="#d29a3a"/>
+  <text x="101" y="201" fill="#f7ead0" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="1">BUILT BY OWNERS, FOR OWNERS</text>
+  <text x="76" y="303" fill="#fff" font-family="Georgia,serif" font-size="65" font-weight="700">Five-star turnovers.</text>
+  <text x="76" y="377" fill="#fff" font-family="Georgia,serif" font-size="65" font-weight="700">Handled.</text>
+  <text x="78" y="439" fill="#d4e9e2" font-family="Arial,sans-serif" font-size="25">Vacation rental cleaning across the Pikes Peak region</text>
+  <g fill="#f7ead0" font-family="Arial,sans-serif" font-size="20" font-weight="700"><text x="78" y="493">✓ Photo-verified reports</text><text x="363" y="493">✓ Linens &amp; restocking</text><text x="646" y="493">✓ Insured &amp; bonded</text></g>
+  <path d="M0 630 0 595 176 520l125 50 154-104 152 105 128-65 182 87 116-54 167 56v35H0Z" fill="#fff" fill-opacity=".09"/>
+  <path d="M0 630V612l233-75 148 54 171-83 173 88 127-48 201 68 147-37v51H0Z" fill="#fff" fill-opacity=".13"/>
+</svg>

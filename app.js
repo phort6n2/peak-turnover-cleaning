@@ -30,15 +30,32 @@
   var tog = document.querySelector('.nav-tog');
   var mnav = document.getElementById('mnav');
   if (tog && mnav) {
-    tog.addEventListener('click', function () {
-      var open = mnav.classList.toggle('open');
+    var setMenu = function (open) {
+      mnav.classList.toggle('open', open);
       tog.setAttribute('aria-expanded', open ? 'true' : 'false');
+      tog.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    tog.addEventListener('click', function () {
+      setMenu(!mnav.classList.contains('open'));
     });
     mnav.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
-        mnav.classList.remove('open');
-        tog.setAttribute('aria-expanded', 'false');
+        setMenu(false);
       }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mnav.classList.contains('open')) {
+        setMenu(false);
+        tog.focus();
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (mnav.classList.contains('open') && !mnav.contains(e.target) && !tog.contains(e.target)) {
+        setMenu(false);
+      }
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && mnav.classList.contains('open')) { setMenu(false); }
     });
   }
 
@@ -82,7 +99,8 @@
 
     var card = form.closest('.qc, .fc') || form.parentNode;
 
-    // Success message (shown if an email client took over)
+    // Replace the form with a clear next-step state. The messages are siblings
+    // of the form so they remain visible after the fields are hidden.
     var ok = card.querySelector('.form-ok');
     if (ok) {
       form.style.display = 'none';
@@ -90,7 +108,7 @@
       if (ok.hasAttribute('tabindex')) { ok.focus(); }
     }
 
-    // Always reveal a copy/paste fallback for anyone whose mail app didn't open
+    // Always reveal a copy/paste fallback for anyone whose mail app didn't open.
     var fb = card.querySelector('.form-fallback');
     if (fb) {
       var ta = fb.querySelector('textarea');
@@ -109,12 +127,17 @@
       var ta = btn.parentNode.querySelector('textarea');
       if (!ta) { return; }
       ta.select();
-      try {
-        if (navigator.clipboard) { navigator.clipboard.writeText(ta.value); }
-        else { document.execCommand('copy'); }
+      var markCopied = function () {
         btn.textContent = 'Copied ✓';
         setTimeout(function () { btn.textContent = 'Copy details'; }, 2000);
-      } catch (err) { /* selection is still available for manual copy */ }
+      };
+      try {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(ta.value).then(markCopied, function () { ta.focus(); });
+        } else if (document.execCommand('copy')) {
+          markCopied();
+        }
+      } catch (err) { ta.focus(); }
     });
   });
 })();
