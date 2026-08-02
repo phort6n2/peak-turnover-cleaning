@@ -2,11 +2,15 @@
   "name": "High Alpine Cleaning",
   "short_name": "High Alpine",
   "description": "Vacation rental turnover cleaning across the Pikes Peak region.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0e5245",
   "icons": [
-    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "/favicon-32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
+    { "src": "/brand-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/brand-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }
