@@ -57,7 +57,7 @@ timestamp on the contact or opportunity record as proof of opt-in.
 - Confirm a form submission creates or updates the expected HighLevel contact.
 - Confirm the SMS branch runs only when the optional checkbox is checked.
 - Add the HighLevel number-pool tracking script when available. All fallback
-  number links use `(805) 712-0677` and the `track-phone` class for replacement.
+  number links use `(719) 377-3123` and the `track-phone` class for replacement.
 - Make sure the legal business name, address, website, use case, and sample
   messages in the A2P registration match the real business and deployed pages.
 
