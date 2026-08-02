@@ -11,7 +11,7 @@ Static multi-page site, deployed on Vercel.
 | `index.html` | Home (`/`) |
 | `services.html` | Services (`/services`) |
 | `pricing.html` | Pricing (`/pricing`) |
-| `areas.html` | Service Areas (`/areas`) |
+| `areas.html` / `areas/*.html` | Service-area hub and local landing pages |
 | `story.html` | Our Story (`/story`) |
 | `faq.html` | FAQ (`/faq`) |
 | `contact.html` | Contact (`/contact`) |
@@ -20,7 +20,7 @@ Static multi-page site, deployed on Vercel.
 | `img/` | Optimized original site photography |
 | `vercel.json` | `cleanUrls` + no trailing slash |
 | `robots.txt` / `sitemap.xml` | Search crawler discovery |
-| `og-image.jpg` | Social sharing preview |
+| `og-image-v2.jpg` | Social sharing preview |
 | `site.webmanifest` / `icon.svg` | Installable-site metadata and icon |
 | `404.html` | Branded not-found page |
 
@@ -34,13 +34,12 @@ replace `https://highalpinecleaning.com` across the HTML files,
 
 ## Production checklist
 
-- **Phone:** `(719) 555-0100` → search `719) 555-0100` and `+17195550100`
 - **Email:** confirm `hello@highalpinecleaning.com` receives mail (also the mailto target in `app.js`)
 - **Pricing:** confirm the published starting rates on `/pricing`.
 
-Do not launch paid traffic until the placeholder phone is replaced and the
-email inbox and pricing are verified. Structured data intentionally omits the
-phone and email until those contact details are confirmed.
+Do not launch paid traffic until the email inbox and pricing are verified.
+The site intentionally omits a public phone number until a dedicated business
+line is available; add it consistently across the HTML and structured data.
 
 The quote forms open the visitor's email app pre-filled to
 `hello@highalpinecleaning.com` (no backend required). If no email application

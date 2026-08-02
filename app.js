@@ -1,7 +1,6 @@
 /* High Alpine Cleaning — shared behavior
    ------------------------------------------------------------------
-   Contact details live in ONE place: update phone/email in the HTML
-   (search "555-0100") and QUOTE_EMAIL below.
+   Update the quote destination in QUOTE_EMAIL and the matching HTML links.
 */
 (function () {
   'use strict';
