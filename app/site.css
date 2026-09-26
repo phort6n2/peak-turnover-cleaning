@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 
 .blog-shell { background: #f7faf8; color: #15342f; min-height: 100vh; }
-.blog-header { background: #0e5245; color: #fff; padding: 1rem 0; position: relative; top: auto; }
+.blog-header { background: #0e5245; color: #fff; padding: 1rem 0; position: static !important; top: auto; }
 .blog-header-inner, .blog-main, .blog-footer-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .blog-header-inner { align-items: center; display: flex; gap: 1rem; justify-content: space-between; }
 .blog-brand { align-items: center; color: #fff; display: flex; font-weight: 800; gap: .55rem; text-decoration: none; }
@@ -14,7 +14,8 @@
 .blog-main { padding: clamp(3rem, 7vw, 6rem) 0; }
 .blog-kicker { color: #17799e; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .blog-hero { max-width: 760px; }
-.blog-hero h1, .article-header h1 { color: #12362f; font-family: Georgia, serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -.035em; line-height: 1.04; margin: .55rem 0 1rem; }
+.blog-hero h1 { color: #12362f; font-family: Georgia, serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -.035em; line-height: 1.04; margin: .55rem 0 1rem; }
+.article-header h1 { color: #12362f; font-family: Georgia, serif; font-size: clamp(2rem, 3.6vw, 3.35rem); letter-spacing: -.03em; line-height: 1.08; margin: .4rem 0 .7rem; }
 .blog-hero p, .article-deck { color: #46625b; font-size: clamp(1.05rem, 2vw, 1.28rem); line-height: 1.6; }
 .post-grid { display: grid; gap: 1.35rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2.25rem; }
 .post-card { background: #fff; border: 1px solid #d8e4df; border-radius: 18px; display: flex; flex-direction: column; overflow: hidden; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
@@ -25,8 +26,8 @@
 .post-card p { -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #46625b; display: -webkit-box; line-height: 1.45; margin: 0; overflow: hidden; }
 .post-meta { color: #617b74; font-size: .85rem; font-weight: 700; }
 .article { margin: 0 auto; max-width: 790px; }
-.article-header { margin-bottom: 2.5rem; }
-.article-image { border-radius: 20px; height: auto; margin: 1rem 0 2.5rem; width: 100%; }
+.article-header { margin-bottom: 1.35rem; position: static !important; top: auto !important; }
+.article-image { border-radius: 20px; height: auto; margin: 0 0 2.25rem; width: 100%; }
 .article-content { color: #25443c; font-size: 1.1rem; line-height: 1.75; }
 .article-content h2 { color: #12362f; font-family: Georgia, serif; font-size: 1.8rem; line-height: 1.15; margin: 2.3rem 0 .7rem; }
 .article-content ul { padding-left: 1.25rem; }
