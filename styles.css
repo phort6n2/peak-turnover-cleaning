@@ -360,12 +360,11 @@ details p{padding:0 0 20px;font-size:.98rem}
 .report-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:38px;align-items:center;max-width:960px;margin:0 auto}
 .report-copy h2{margin:8px 0 14px}.report-copy p{margin-bottom:16px}
 .report-demo{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-m);overflow:hidden}
-.report-head{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:18px 20px;background:var(--pine);color:#fff}
-.report-head b{color:#fff;font-family:var(--f-display);font-size:1.08rem}.report-head span{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#d7ebe5}
-.report-items{list-style:none;padding:8px 20px}
-.report-items li{display:flex;gap:11px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink)}
-.report-items li:last-child{border-bottom:0}.report-items li::before{content:'\2713';display:inline-flex;align-items:center;justify-content:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--pine-l);color:var(--teal);font-weight:800;font-size:.76rem}
-.report-foot{padding:14px 20px;background:var(--soft);border-top:1px solid var(--line);color:var(--slate);font-size:.85rem}
+.report-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;padding:22px 24px;background:var(--pine);color:#fff}
+.report-head>div{display:grid;gap:4px}.report-overline{font-size:.68rem!important;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.report-head b{color:#fff;font-family:var(--f-display);font-size:1.35rem;line-height:1.1}.report-property{font-size:.84rem!important;letter-spacing:.04em!important;text-transform:none!important}.report-head .report-overline,.report-head .report-property{color:#d7ebe5}.report-status{border:1px solid rgba(255,255,255,.34);border-radius:999px;color:#fff!important;font-size:.68rem!important;font-weight:800;letter-spacing:.12em;padding:7px 9px;text-transform:uppercase;white-space:nowrap}
+.report-items{padding:4px 24px}.report-item{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.report-item:last-child{border-bottom:0}.report-check{display:inline-flex;align-items:center;justify-content:center;flex:none;width:23px;height:23px;border-radius:50%;background:var(--pine-l);color:var(--teal);font-weight:800;font-size:.8rem}.report-item>div{display:grid;gap:2px}.report-item b{font-size:.96rem;line-height:1.2}.report-item div span{color:var(--slate);font-size:.88rem;line-height:1.35}
+.report-foot{display:flex;flex-wrap:wrap;gap:8px 18px;padding:14px 24px;background:var(--soft);border-top:1px solid var(--line);color:var(--slate);font-size:.8rem}.report-foot span::before{content:'•';color:var(--teal);margin-right:6px}
 @media(max-width:760px){.report-grid{grid-template-columns:1fr;gap:24px}}
 
 /* CTA band */
