@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 
 .blog-shell { background: #f7faf8; color: #15342f; min-height: 100vh; }
-.blog-header { background: #0e5245; color: #fff; padding: 1rem 0; }
+.blog-header { background: #0e5245; color: #fff; padding: 1rem 0; position: relative; top: auto; }
 .blog-header-inner, .blog-main, .blog-footer-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
 .blog-header-inner { align-items: center; display: flex; gap: 1rem; justify-content: space-between; }
 .blog-brand { align-items: center; color: #fff; display: flex; font-weight: 800; gap: .55rem; text-decoration: none; }
