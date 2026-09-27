@@ -29,8 +29,12 @@
 .article-header { margin-bottom: 1.35rem; position: static !important; top: auto !important; }
 .article-image { border-radius: 20px; height: auto; margin: 0 0 2.25rem; width: 100%; }
 .article-content { color: #25443c; font-size: 1.1rem; line-height: 1.75; }
-.article-content h2 { color: #12362f; font-family: Georgia, serif; font-size: 1.8rem; line-height: 1.15; margin: 2.3rem 0 .7rem; }
-.article-content ul { padding-left: 1.25rem; }
+/* Override the marketing site's global section padding: an article needs continuous reading rhythm. */
+.article-content section { padding: 0; }
+.article-content section + section { margin-top: 2.75rem; }
+.article-content h2 { color: #12362f; font-family: Georgia, serif; font-size: 1.8rem; line-height: 1.15; margin: 0 0 .75rem; }
+.article-content p { margin: 0 0 1rem; }
+.article-content ul { margin: .25rem 0 1rem; padding-left: 1.25rem; }
 .article-content li { margin: .5rem 0; }
 .article-cta { background: #e5f2ee; border-radius: 18px; margin-top: 2.5rem; padding: 1.7rem; }
 .article-cta h2 { margin-top: 0; }
